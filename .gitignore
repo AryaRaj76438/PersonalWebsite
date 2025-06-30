@@ -62,6 +62,5 @@ build/
 Thumbs.db
 
 # Application properties (optional if sensitive info)
-application.properties
 application.yml
 .env
