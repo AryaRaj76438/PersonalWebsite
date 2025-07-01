@@ -1,0 +1,151 @@
+/* style.css - Unified Theme for QuantumSyntax */
+
+/* Global Reset */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f5f7fa;
+    color: #222;
+    padding-top: 70px;
+    line-height: 1.6;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #1b1e23;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+.navbar-brand {
+    font-weight: 600;
+    font-size: 1.4rem;
+}
+.nav-link {
+    color: #ccc !important;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+.nav-link:hover, .nav-link.active {
+    color: #fff !important;
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: #0057d9;
+    border-color: #0057d9;
+}
+.btn-primary:hover {
+    background-color: #0045b5;
+    border-color: #0045b5;
+}
+.btn-outline-dark {
+    border-radius: 25px;
+    font-weight: 500;
+}
+.btn-outline-info {
+    border-radius: 25px;
+    font-weight: 500;
+}
+
+/* Footer */
+footer {
+    margin-top: 3rem;
+    background-color: #1b1e23;
+    color: #aaa;
+    text-align: center;
+    padding: 1.5rem;
+}
+.footer-link {
+    color: #ccc;
+    text-decoration: none;
+    margin: 0 0.5rem;
+}
+.footer-link:hover {
+    color: #fff;
+}
+
+/* Cards & Layout */
+.card {
+    border: none;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+}
+.card:hover {
+    transform: scale(1.03);
+}
+
+/* Project Card */
+.project-card {
+    background: #ffffff;
+    border-left: 5px solid #0057d9;
+    padding: 1rem;
+}
+
+/* Blog Card */
+.blog-card {
+    background: #f9f9f9;
+    padding: 1rem;
+}
+
+/* Forms */
+form {
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Utilities */
+.truncate-text {
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-height: 6em;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+    color: white;
+    padding: 6rem 1rem;
+    text-align: center;
+}
+
+/* Skill Badges */
+.skill-badge {
+    background-color: #0057d9;
+    color: white;
+    margin: 0 6px 6px 0;
+    font-size: 0.85rem;
+    border-radius: 20px;
+    padding: 0.3rem 0.7rem;
+}
+
+/* Profile Image */
+.profile-img {
+    max-width: 180px;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* Dark Mode (optional enhancement) */
+body.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+.card.dark-mode {
+    background-color: #1e1e1e;
+    color: white;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 1.8rem;
+    }
+}

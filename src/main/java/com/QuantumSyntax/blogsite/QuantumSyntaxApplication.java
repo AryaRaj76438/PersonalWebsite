@@ -10,10 +10,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication(scanBasePackages = "com.QuantumSyntax.blogsite")
 public class QuantumSyntaxApplication {
-
-	@Autowired
-	private PostRepository postRepository;
-
+	
 	public static void main(String[] args) {
 		Dotenv dotenv = Dotenv.load();
 		System.setProperty("DB_URL", dotenv.get("DB_URL"));

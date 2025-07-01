@@ -47,4 +47,19 @@ public class BlogController {
         postRepository.deleteById(id);
         return "redirect:/blog";
     }
+
+
+    @GetMapping("/blog/view/{id}")
+    public String viewBlog(@PathVariable Long id, Model model) {
+        Post post = postRepository.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("Blog not found"));
+
+        List<Post> recentPosts = postRepository.findTop3ByOrderByIdDesc();
+        model.addAttribute("post", post);
+        model.addAttribute("recentPosts", recentPosts);
+
+        return "blog_detail";
+    }
+
+
 }

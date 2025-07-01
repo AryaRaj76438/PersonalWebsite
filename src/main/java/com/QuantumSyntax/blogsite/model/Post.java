@@ -2,6 +2,8 @@ package com.QuantumSyntax.blogsite.model;
 
 import jakarta.persistence.*;
 
+import java.util.Date;
+
 @Entity
 public class Post {
 
@@ -11,7 +13,8 @@ public class Post {
 
     private String title;
 
-    @Column(length = 1000)
+    @Lob
+    @Column(nullable = false)
     private String content;
 
     private String technologies;
@@ -20,53 +23,37 @@ public class Post {
 
     private String liveDemo;
 
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date createdAt;
     // Getters & Setters
 
-    public Long getId() {
-        return id;
+    @PrePersist
+    protected void onCreate() {
+        createdAt = new Date();
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public Date getCreatedAt() {
+        return createdAt;
+    }
+    public void setCreatedAt(Date createdAt) {
+        this.createdAt = createdAt;
     }
 
-    public String getTitle() {
-        return title;
-    }
+    public Long getId() { return id; }
+    public void setId(Long id) { this.id = id; }
 
-    public void setTitle(String title) {
-        this.title = title;
-    }
+    public String getTitle() { return title; }
+    public void setTitle(String title) { this.title = title; }
 
-    public String getContent() {
-        return content;
-    }
+    public String getContent() { return content; }
+    public void setContent(String content) { this.content = content; }
 
-    public void setContent(String content) {
-        this.content = content;
-    }
+    public String getTechnologies() { return technologies; }
+    public void setTechnologies(String technologies) { this.technologies = technologies; }
 
-    public String getTechnologies() {
-        return technologies;
-    }
+    public String getGithubLink() { return githubLink; }
+    public void setGithubLink(String githubLink) { this.githubLink = githubLink; }
 
-    public void setTechnologies(String technologies) {
-        this.technologies = technologies;
-    }
-
-    public String getGithubLink() {
-        return githubLink;
-    }
-
-    public void setGithubLink(String githubLink) {
-        this.githubLink = githubLink;
-    }
-
-    public String getLiveDemo() {
-        return liveDemo;
-    }
-
-    public void setLiveDemo(String liveDemo) {
-        this.liveDemo = liveDemo;
-    }
+    public String getLiveDemo() { return liveDemo; }
+    public void setLiveDemo(String liveDemo) { this.liveDemo = liveDemo; }
 }
